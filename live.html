@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        /* common css */
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+    </style>
+
+
+
+    <style>
+        /* for nav bar */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+        }
+
+        nav a {
+            color: black;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            color: grey;
+        }
+
+        nav a h1 {
+            margin: 0;
+        }
+
+        .remove-transition * {
+            transition: none !important;
+        }
+    </style>
+
+
+
+    <style>
+        /* card css */
+
+        .card {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+            overflow: hidden;
+            border-radius: 1rem;
+            text-decoration: none;
+            margin: 1rem;
+        }
+
+
+        .card>video {
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .card .details {
+            padding: 1rem 1rem;
+        }
+
+        .card .details .title {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .card .details .description {
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: grey;
+        }
+    </style>
+
+
+    <style>
+
+        /* for nav bar drop down list */
+        .account {
+            overflow: hidden;
+        }
+
+        .account .list {
+            position: absolute;
+            height: 0px;
+            right: 0px;
+            overflow: hidden;
+            visibility: hidden;
+            z-index: -1000;
+            background-color: white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+            display: flex;
+            flex-direction: column;
+            transition: 0.2s;
+            transform: translateY(-1rem);
+        }
+
+        .account .list a {
+            padding: 0.8rem 1rem;
+        }
+
+        .account:focus .list {
+            height: auto;
+            visibility: visible;
+            z-index: 1001;
+            transform: translateY(1.5rem);
+        }
+    </style>
+
+</head>
+
+<body class="remove-transition">
+
+    <nav style="
+        display: flex; 
+        flex-direction: row;
+        padding: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        ">
+        <a href="/">
+            <h1>Music Streaming</h1>
+        </a>
+        <div class="account" tabindex="1">
+            Account
+            <div class="list">
+                <a>Reset password</a>
+                <a>Logout</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <main style="padding: 1.5rem;">
+        <h2>Channel</h2>
+        <div style=" display: grid; grid-template-columns: 33.33% 33.33% 33.33%;">
+            <div class="card">
+                <video autoplay="autoplay" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" controls type="video/mp4"></video>
+                <div class="details">
+                    <span class="title">Channel title</span>
+                    <div class="description">Channel description</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <video autoplay="autoplay" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" controls type="video/mp4"></video>
+                <div class="details">
+                    <span class="title">Channel title</span>
+                    <div class="description">Channel description</div>
+                </div>
+            </div>
+            <div class="card">
+                <video autoplay="autoplay" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" controls type="video/mp4"></video>
+                <div class="details">
+                    <span class="title">Channel title</span>
+                    <div class="description">Channel description</div>
+                </div>
+            </div>
+            <div class="card">
+                <video autoplay="autoplay" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" controls type="video/mp4"></video>
+                <div class="details">
+                    <span class="title">Channel title</span>
+                    <div class="description">Channel description</div>
+                </div>
+            </div>
+            <div class="card">
+                <video autoplay="autoplay" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" controls type="video/mp4"></video>
+                <div class="details">
+                    <span class="title">Channel title</span>
+                    <div class="description">Channel description</div>
+                </div>
+            </div>
+            <div class="card">
+                <video autoplay="autoplay" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" controls type="video/mp4"></video>
+                <div class="details">
+                    <span class="title">Channel title</span>
+                    <div class="description">Channel description</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <script>
+        window.addEventListener('load', e => document.body.classList.remove('remove-transition'));
+    </script>
+</body>
+
+</html>
