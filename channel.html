@@ -57,6 +57,8 @@
         /* card css */
 
         .card{
+            display: flex;
+            flex-direction: column;
             box-shadow: 0 10px 20px rgba(0,0,0,0.19);
             overflow: hidden;
             border-radius: 1rem;
@@ -68,13 +70,20 @@
 
 
         .card > img{
+            flex: 3;
             object-fit: cover; 
             width: 100%;
-            height: 60%;
+            max-height: 60%;
         }
 
         .card .details {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            height: 40%;
             padding: 1rem 1rem;
+            overflow: hidden;
+            gap: 0.2rem;
         }
 
         .card .details .title{
@@ -86,6 +95,7 @@
             font-weight: 600;
             font-size: 0.8rem;
             color: grey;
+            overflow: hidden;
         }
 
     </style>
@@ -96,6 +106,17 @@
 
         .account{
             overflow: hidden;
+            cursor: pointer;
+        }
+
+        .account span::after{
+            /* https://stackoverflow.com/questions/6041209/html-character-codes-for-this-or-this */
+            padding: 0.2rem;
+            content:  "\25BC";
+            font-size: 0.7rem;
+            color: grey;
+            display: inline-block;
+            transition: 0.2s;
         }
 
         .account .list{
@@ -110,18 +131,27 @@
             display: flex;
             flex-direction: column;
             transition: 0.2s;
-            transform: translateY(-1rem);
+            opacity: 0;
+            transform-origin: top right;
+            transform: translateY(-1rem) scale(0);
         }
 
         .account .list a{
             padding: 0.8rem 1rem;
+            cursor: pointer;
         }
         
         .account:focus .list{
             height: auto;
             visibility: visible;
             z-index: 1001;
-            transform: translateY(1.5rem);
+            opacity: 1;
+            border-radius: 0.5rem;
+            transform: translateY(1.5rem) scale(1);
+        }
+
+        .account:focus span::after{
+            transform: rotate(180deg);
         }
     </style>
 
@@ -137,7 +167,7 @@
         ">
         <a href="/channel.html"><h1>Music Streaming</h1></a>
         <div class="account" tabindex="1">
-            Account
+            <span>Account</span>
             <div class="list">
                 <a>Reset password</a>
                 <a>Logout</a>
@@ -157,7 +187,7 @@
                     <img src="/images.png" alt="">
                     <div class="details">
                         <span class="title">Channel title</span>
-                        <div class="description">Channel description</div>
+                        <div class="description">Channel description Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et quasi maiores autem in at consequuntur cumque architecto fuga recusandae nulla qui, sunt hic ex, illo dolor alias quidem ducimus exercitationem.</div>
                     </div>  
                 </div>
             </a>
